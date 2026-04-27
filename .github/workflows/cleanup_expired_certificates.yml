@@ -120,7 +120,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          BRANCH="cleanup/expired-certificates-$(date +%Y-%m-%d)"
+          BRANCH="cleanup/expired-certificates-$(date +%Y-%m-%d)-${{ github.run_id }}"
           git checkout -b "$BRANCH"
 
           mapfile -t files < /tmp/old_expired_certs.txt
